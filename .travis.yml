@@ -19,7 +19,6 @@ before_script:
     - printenv
     - doxygen --version
     - gcc-5 --version
-    - gcov-4.8 --version
     - gprof --version
     - grep "#define BOOST_VERSION " /usr/include/boost/version.hpp
 
