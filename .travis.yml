@@ -1,4 +1,4 @@
-language: cpp
+language: c
 
 compiler:
     - gcc
@@ -11,32 +11,17 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - doxygen
-      - g++-4.8
+      - gcc-5
       - libboost-dev
-      - libgtest-dev
-      - valgrind
-
-install:
-    - mkdir gtest
-    - cd gtest
-    - echo $(pwd)
-    - export LIBRARY_PATH=$(pwd)
-    - cp -r /usr/src/gtest/* ./
-    - cmake -D CMAKE_INSTALL_PREFIX:PATH=./ ./
-    - make
-    - ls -al
-    - cd -
 
 before_script:
     - uname -a
     - printenv
     - doxygen --version
-    - g++-4.8 --version
+    - gcc-5 --version
     - gcov-4.8 --version
     - gprof --version
     - grep "#define BOOST_VERSION " /usr/include/boost/version.hpp
-    - dpkg -l libgtest-dev
-    - valgrind --version
 
 script:
     - date
