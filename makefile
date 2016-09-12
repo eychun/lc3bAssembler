@@ -1,6 +1,6 @@
 
 CC           := gcc-5
-CFLAGS       := -pedantic -ansi -Wall
+CFLAGS       := -pedantic -ansi -Wall -lm
 GPROFFLAGS   := -pg
 
 status:
